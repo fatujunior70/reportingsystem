@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Online Report System</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/register.js"></script>
+
+</head>
+<body>
+    <header class="main-header">
+       
+        <h1><a href="index.html"><img src="assets/home.png" alt="Home Button" style="width: 30px; height: 30px; float: left;"></a>Online Report System</h1>
+    </header>
+
+    
+    <main>
+        <div class="form-container">
+            <h2>Register</h2>
+            <form action="pages/register.php" method="POST" id="registerForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="student@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg_number">Registration Number:</label>
+                    <input type="text" id="reg_number" name="reg_number" placeholder="FCP/CSE/22/1070" required pattern="[A-Z,a-z]{3}/[A-Z,a-z]{3}/\d{2}/\d{4}">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="********" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p>Already have an account? <a href="login.html" style ="text-decoration: none">Login</a></p>
+            </form>
+            
+        </div>
+    </main>
+</body>
+</html>

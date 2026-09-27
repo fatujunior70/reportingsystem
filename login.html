@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CampusSafe Report System</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script>
+        function validateLoginForm() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            // Registration number pattern: 3-4 letters / 3-4 letters / 2 digits / 4 digits
+            const regNumberPattern = /^[A-Za-z]{3,4}\/[A-Za-z]{3,4}\/\d{2}\/\d{4}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!regNumberPattern.test(username) && !emailPattern.test(username)) {
+                alert("Please enter a valid email or registration number (e.g., FCP/CSE/22/1070).");
+                return false;
+            }
+
+            if (password.length === 0) {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <header class="main-header">
+        
+        <h1><a href="index.html"><img src="assets/home.png" alt="Home Button" style="width: 30px; height: 30px; float: left;"></a>Online Report System</h1>
+    </header>
+    
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="pages/login.php" method="POST" id="loginForm" onsubmit="return validateLoginForm();">
+                <div class="form-group">
+                    <label for="username">Email or Registration Number:</label>
+                    <input type="text" id="username" name="username" placeholder="Email/Reg. Number" required> 
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="*********" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>Don't have an account? <a href="register.html" style ="text-decoration: none">Register</a></p>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
